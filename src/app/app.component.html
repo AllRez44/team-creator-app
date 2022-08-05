@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="ui card">
+    <h1> Assembler</h1>
+      <ul class="membersList">
+        <li class="preListLi">Members added to assemble will be shown here</li>
+        <li class="preListLi">Ex.: John Doe</li>
+        <li class="preListLi" style="padding-left: 1.9rem"> Mary Ann</li>
+        <li *ngFor="let member of members">{{member}}</li>
+      </ul>
+    <div class="memberAdd">
+      <input #memberNameInput 
+      type="text"
+      class="memberName" 
+      placeholder="Write a member's name. Ex.: Maria Hill or Happy Hogan" 
+      (input)="memberNameInputFun(memberNameInput.value)"
+      [value]="newMemberName"> <!-- '#...' is some kind of an ID in Angular' ; '[...]' is a way to make an attribute be equal to a variable in the AppComponent TS file ; '(...)'' is how you put an event listener.  -->
+      <button (click)="addMember()"> Add</button>
+    </div>
+    
+    <div class="teamCreator">
+      <input type="number" class="teamQnt" placeholder="Num of Teams">
+      <button> Assemble</button>
+    </div>
+    <p *ngIf="errorMessage" class="errorMessage"> {{errorMessage}} </p> <!-- the ngIf attribute directive here has a condition that if 'errorMessage' variable is empty, it will be as it's 'false'. So the '<p>' tag won't be in the the client's HTML. When the 'errorMessage' is filled wuth something, it returns as 'true' for this conditional, so the '<p>' tag will be inserted to the clients HTML and with the 'error Message' content -->
+  </div>
+</div>
