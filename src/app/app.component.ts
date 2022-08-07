@@ -14,7 +14,6 @@ export class AppComponent {
   teams: string[][] = []; //Declares that "teams" is an array of string arrays (ex.: teams[team1['a','b'],team2['c','d'], ...]) 
   numOfTeams: number | string = '' ; //Declared as a number OR an empty string to show the placeholder. If it's declared as a number, It should be set to a value and that value would show inside the input, then not showing the placeholder. 
   //*OBS.: "|" is the "||"(or) of TypeScript. 
-  teamIndex: number | string = '1'
 
   onMemberNameInput(input:string){
     this.newMemberName = input
@@ -102,5 +101,9 @@ export class AppComponent {
       i++
     }
     console.log('\n', '-----------------')
+
+    if (this.members.length){ //Clears the members list once the teams are creted
+      this.members = []
+    }
 }
 }

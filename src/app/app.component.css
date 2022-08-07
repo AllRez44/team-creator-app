@@ -16,12 +16,6 @@
     overflow: auto;
   }
 
-  .membersList li{
-    list-style-type: none;
-font-size: 1.25rem;
-margin-bottom: 0.5rem;
-  }
-  
   .preListLi{
     color: rgba(167, 167, 167, 0.925);
     cursor:default;
@@ -61,7 +55,7 @@ margin-bottom: 0.5rem;
   .teamCreator input {
     width: 50%;
   }
-  
+
   .card {
     padding: 2rem;
     width: 100%;
