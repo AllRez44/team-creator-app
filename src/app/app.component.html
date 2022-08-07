@@ -30,11 +30,10 @@
     </div>
     <p *ngIf="errorMessage" class="errorMessage"> {{errorMessage}} </p> <!-- the ngIf attribute directive here has a condition that if 'errorMessage' variable is empty, it will be as it's 'false'. So the '<p>' tag won't be in the the client's HTML. When the 'errorMessage' is filled wuth something, it returns as 'true' for this conditional, so the '<p>' tag will be inserted to the clients HTML and with the 'error Message' content -->
   </div>
-  <ul id="teamsList">
-    <li *ngFor="let team of teams">
-      <h3> Team #{{teamIndex}}</h3>
-      {{team}}
-    </li>
-  </ul>
-
+  <div *ngIf="teams.length" class="teamsContainer"> <!-- ngIf will make sure this container will only be on client's HTML if "teams.length" is bigger than '0'-->
+    <app-team 
+    *ngFor="let team of teams; let teamIndex = index" 
+    [team] = "team" 
+    [teamIndex]="teamIndex"></app-team>
+  </div>
 </div>

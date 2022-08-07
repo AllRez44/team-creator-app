@@ -43,7 +43,7 @@ export class AppComponent {
   }
 //Remove Pre List Function
   removePreList(){
-    let i = 0
+    let i = 0 
     let preList = document.getElementsByClassName('preListLi') 
     console.log(preList)
     while(i < preList.length ){
